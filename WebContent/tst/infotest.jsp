@@ -13,7 +13,7 @@
 <%
 	InfoDao iDao = InfoDao.getInstance();
 	out.println("<h3>dto가져오기</h3>");
-	ArrayList<InfoDto> dtos = iDao.infolist(1, 10);
+	ArrayList<InfoDto> dtos = iDao.infolist(1, 50);
 	for(InfoDto dto :dtos){
 		out.println(dto + "<br>");
 	}
@@ -26,15 +26,14 @@
 	out.print("2번 글:" + iDao.getInfoNotHitUp(2) + "<br>");
 	iDao.hitUp(2);
 	out.print("<h3>7. 글수정");
-	dto = iDao.getInfoNotHitUp(18);
-	dto.setItitle("wpahr");
-	//dto.setIcontent("독특한 본문 수정함\n수정완료");
-	//result = iDao.modifyInfo(dto);
+	dto = iDao.getInfoNotHitUp(22);
+	dto.setItitle("wpaff");
+	dto.setIcontent("독특한 본문 수정함\n수정완료");
+    result = iDao.modifyInfo(dto);
 	out.print(result == InfoDao.SUCCESS ? " 성공</h3>" : " 실패</h3>");
 	out.print("<h3>8. 글 삭제</h3>");
-	result = iDao.deleteInfo(10);
-	out.print(result == InfoDao.SUCCESS? "글삭제 성공<br>":"비번오류로 글삭제 실패<br>");
-
+	result = iDao.deleteInfo(23);
+	out.print(result == InfoDao.SUCCESS? "글삭제 성공<br>":" 글삭제 실패<br>");
 
 %>
 </body>

@@ -156,7 +156,7 @@ public class FreeBoardDao {
 			}
 		}
 		// (5) 글번호(fid)로 글전체 내용(BoardDto) 가져오기 - 글상세보기, 글수정뷰, 답변글쓰기뷰용
-		public FreeBoardDto ggetBoardNotHitUp(int fid) {
+		public FreeBoardDto getBoardNotHitUp(int fid) {
 			FreeBoardDto dto = null;
 			Connection        conn  = null;
 			PreparedStatement pstmt = null;
@@ -215,7 +215,7 @@ public class FreeBoardDao {
 				pstmt.setString(4, dto.getFip());
 				pstmt.setInt(5, dto.getFid());
 				result = pstmt.executeUpdate();
-				System.out.println(result == SUCCESS ? "글수정 성공":"글번호(bid) 오류");
+				System.out.println(result == SUCCESS ? "글수정 성공":" 오류");
 			} catch (SQLException e) {
 				System.out.println(e.getMessage() + "글 수정 실패 ");
 			} finally {

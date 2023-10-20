@@ -34,7 +34,7 @@ public class InfoDao {
 	}
 	//글목록
 	public ArrayList<InfoDto> infolist(int startRow, int endRow){
-		ArrayList<InfoDto> dtos = new ArrayList<InfoDto>();
+		ArrayList<InfoDto> lists = new ArrayList<InfoDto>();
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
 		ResultSet         rs    = null;
@@ -63,7 +63,7 @@ public class InfoDao {
 				 int ihit = rs.getInt("ihit");
 				 int iindent = rs.getInt("iindent");
 				 String iip = rs.getString("iip");
-				 dtos.add(new InfoDto(iid, aid, ititle, icontent, lno, lname, tno, tname, ifilename, ifilename2, irdate, ihit, iindent, iip));
+				 lists.add(new InfoDto(iid, aid, ititle, icontent, lno, lname, tno, tname, ifilename, ifilename2, irdate, ihit, iindent, iip));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -76,7 +76,7 @@ public class InfoDao {
 				System.out.println(e.getMessage());
 			} 
 		}
-		return dtos;
+		return lists;
 	}
 	public int getinfoCnt() {
 		int totCnt = 0;
@@ -199,29 +199,25 @@ public class InfoDao {
 		}
 		return dto;
 	}
-// (6) 글 수정하기(fid, ftitle, fcontent, ffilename, frdate(SYSDATE), fip 수정)
+// (6) 글 수정하기 
 	public int modifyInfo(InfoDto dto) {
 		int result = FAIL;
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
 		String sql = "UPDATE INFO " + 
-				"    SET ITITLE = ? , " + 
-				"        ICONTENT = ? , " + 
-				"        LNO = ? , " + 
-				"        TNO = ? , " + 
-				"        IFILENAME = ? ," + 
-				"        IFILENAME2 = ? " + 
-				"        WHERE IID = ? ;"
-			;
+				"  SET ITITLE = ? , " + 
+				"      ICONTENT = ?  " + 
+				"      IFILENAME = ? , " + 
+				"      IFILENAME2 = ? , " + 
+				"    WHERE IID=? ";
 		try {
 			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getItitle());
 			pstmt.setString(2, dto.getIcontent());
-			pstmt.setInt(3, dto.getLno());
-			pstmt.setInt(4, dto.getTno());
-			pstmt.setString(5, dto.getIfilename());
-			pstmt.setString(6, dto.getIfilename2());
-			pstmt.setInt(7, dto.getIid());
+			pstmt.setString(3, dto.getIfilename());
+			pstmt.setString(4, dto.getIfilename2());
+			pstmt.setInt   (5, dto.getIid());
 			result = pstmt.executeUpdate();
 			System.out.println(result == SUCCESS ? "글수정 성공":" 오류");
 		} catch (SQLException e) {
@@ -247,7 +243,7 @@ public class InfoDao {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, iid);
 			result = pstmt.executeUpdate();
-			System.out.println(result == SUCCESS ? "글삭제 성공":"글번호(bid) 오류");
+			System.out.println(result == SUCCESS ? "글삭제 성공":" 오류");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage() + "글 삭제 실패 ");
 		} finally {
