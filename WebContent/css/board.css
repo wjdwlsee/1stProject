@@ -1,0 +1,169 @@
+@charset "UTF-8";
+*{padding:0; margin: 0;}
+body { 
+	
+}
+header{
+	background-image:url('../img/snow-4801976_1280.jpg') ;
+	background-repeat : no-repeat;
+	background-size : cover;
+	height: 700px;
+}
+p{font-size: 20px; color: #808080;}
+header a {text-decoration: none; font-weight: bold;}
+header li { list-style: none;}
+header .gnb{}
+header .gnb ul {
+	overflow: hidden;
+	width:1000px;
+	height: 40px;
+	line-height: 30px;
+	margin: 0 auto;
+}
+header .gnb ul li {	float: right;	margin-right: 5px;}
+header .gnb a { 
+	color : #808080;
+	border : 1px solid #808080;
+	border-radius : 10px;
+	display: block;
+	padding-left:15px;
+	padding-right:15px;
+}
+header .logo{
+		
+	height:400px;
+	text-align:center;
+	margin: 20px auto;
+	cursor: pointer;
+  
+}
+header .lnb {
+  width: 100%;
+  border-top: 1px dashed #ab8c45;
+  border-bottom: 1px dashed #ab8c45;
+}
+header .lnb ul{
+	overflow: hidden;
+	width:300px;
+	margin: 0 auto;
+}
+header .lnb ul li {
+	margin: 5px;
+	float:right;
+	padding:5px 40px;
+	line-height: 25px;
+}
+header .lnb a {
+	height:1.1em;
+	color: #ab8c45;
+	font-size:1.1em;
+	margin-bottom: 20px;
+}
+#idConfirmResult, #pwChkResult, #emailConfirmResult{text-align: left; padding-left: 30px;}
+#content_form {
+ 	font-size: 9pt;
+	font-family: 'Hi Melody', sans-serif;
+	width: 800px; height:600px; 
+	margin: 20px auto 0px;
+}
+#content_form {
+	bolder:1px solid #99ccff;
+}
+
+#content_form table {
+	width:90%; height:100px; margin: 0px auto; background-color :#ffffff;
+}
+#content_form #join{
+	margin : 50px;
+}			
+#content_form table tr { 
+	background-color: #ffffff;  overflow: hidden;
+}
+#content_form table tr:hover { 
+	background-color: #ededed; cursor: pointer;
+}
+#content_form td, #content_form th {
+	text-align: center; padding:3px; float:left; 
+}
+#content_form caption {
+	font-size: 25px; padding:10px;
+}
+#content_form h2, #content_form b ,#content_form p {text-align: center; color:black;}
+#content_form a { text-decoration: none; color:black}
+#content_form .left{text-align: left;}
+#content_form .paging {text-align: center;}
+#content_form td input:not(.btn), #content_form td textarea{
+	width: 90%;
+}
+#content_form td div{
+	width: 90%; margin: 0 auto;
+}
+#content{
+    width:1000px; margin:0 auto;
+}
+#content .lnb {
+  margin :20px auto;
+  border-top: 1px dashed #887718;
+  border-bottom: 1px dashed #887718;
+}
+#content .lnb ul{
+	overflow: hidden;
+	width:250px;
+	margin: 0 auto;
+}
+#content .lnb ul li {
+	margin: 3px;
+	float:right;
+	padding:3px 30px;
+	line-height: 15px;
+}
+/* * * * * #content .section1 * * * * */
+#content .section1 {
+    width:100%;
+    overflow: hidden;
+}
+
+#content .section1 > div {
+    border: 1px solid gray;
+    box-sizing: border-box;
+    float: left;
+    height: 400px;
+    line-height: 400px;
+    text-align: center;
+}
+
+#content .section1 .slide_banner {
+    width: 100%;
+}
+
+
+/* * * * * #content .section2 * * * * */
+#content .section2 .hit_product {
+    text-align: center;
+    margin: 28px ;
+}
+
+#content .section2 .hit_product {
+   
+}
+
+ #content .section2 .hit_product ul,
+ #content .section2 .md_product ul {
+     overflow: hidden;
+     /*width:998px <= 마진5개 포함*/
+ }
+
+#content .section2 ul > li{
+    float: left;
+    height: 500px;
+    line-height: 400px;
+    text-align: center;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    width: 24%;
+    margin-right: 0.8%;
+}
+
+ #content .section2 ul > li:first-child {
+        margin : 10%;
+   }

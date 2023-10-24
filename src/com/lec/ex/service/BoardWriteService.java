@@ -48,12 +48,12 @@ public class BoardWriteService implements Service {
 				result = boardDao.writeBoard(boardDto);
 				// joinMember결과에 따라 적절히 request.setAttribute
 				if(result == FreeBoardDao.SUCCESS) { // 회원가입 진행
-					request.setAttribute("boaredResult", "글쓰기 성공");
+					request.setAttribute("boardResult", "글쓰기 성공");
 				}else {
-					request.setAttribute("boaredResult", "글쓰기 실패");
+					request.setAttribute("boardResult", "글쓰기 실패");
 				}
 			}else {
-				request.setAttribute("boaredResult", "로그인 한 사람만 글쓸 수 있어요");
+				request.setAttribute("boardResult", "로그인 한 사람만 글쓸 수 있어요");
 			}
 		} catch (IOException e) {
 			System.out.println(e.getMessage());

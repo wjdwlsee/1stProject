@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 	<c:if test="${not empty admin }">
@@ -24,6 +25,7 @@
 	</c:if>
 	<div id="content_form">
 		<form action="${conPath }/adminLogin.do" method="post">
+		<input type="hidden" name="next" value="${param.next }">
 			<table>
 			<caption>관리자 로그인</caption>
 			<tr>

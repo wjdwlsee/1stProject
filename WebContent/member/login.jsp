@@ -8,6 +8,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+<link href="${conPath }/css/style.css" rel="stylesheet">
 </head>
 <body>
 	<c:if test="${not empty joinResult }">
@@ -21,6 +25,20 @@
 			history.back();
 		</script>
 	</c:if>
+	<header> 
+		<div class="gnb">
+				<ul>
+					<li><a href="${conPath }/member/join.jsp">회원가입</a></li>
+					<li><a href="${conPath }/main/main.jsp">홈</a></li>
+					
+				</ul>
+	
+		</div>
+		<div class="logo" onclick="location.href='${conPath }/main/main.jsp'">
+			<p>여행은 개인의 취향이다 </p>
+
+		</div> 
+</header>
 	<div id="content_form">
 		<form action="${conPath }/login.do" method="post">
 			<input type="hidden" name="next" value="${param.next }">

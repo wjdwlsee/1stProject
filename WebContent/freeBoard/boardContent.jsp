@@ -34,7 +34,9 @@
 				<th>첨부파일</th>
 				<td>
 					<c:if test="${not empty board.ffileName }">
-						<a href="${conPath }/fileBoardUp/${board.ffileName}" target="_blank">${board.ffileName}</a>
+						<a href="${conPath }/freeBoardup/${board.ffileName}" target="_blank">${board.ffileName}
+						
+						</a>
 					</c:if>
 					<c:if test="${empty board.ffileName }">
 						첨부파일없음

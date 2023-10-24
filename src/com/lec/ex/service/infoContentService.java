@@ -3,13 +3,20 @@ package com.lec.ex.service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lec.ex.dao.FreeBoardDao;
+import com.lec.ex.dao.InfoDao;
+import com.lec.ex.dto.InfoDto;
 import com.lec.ex.service.Service;
 
 public class infoContentService implements Service {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+		int iid = Integer.parseInt(request.getParameter("fid"));
+		InfoDao iDao = InfoDao.getInstance();
+		iDao.hitUp(iid);
+		InfoDto infocontent = iDao.getInfoNotHitUp(iid);
+		request.setAttribute("infocontent", infocontent);
 
 	}
 

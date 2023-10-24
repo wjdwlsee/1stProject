@@ -26,7 +26,7 @@
 	out.print("2번 글:" + iDao.getInfoNotHitUp(2) + "<br>");
 	iDao.hitUp(2);
 	out.print("<h3>7. 글수정");
-	dto = iDao.getInfoNotHitUp(22);
+	//dto = iDao.getInfoNotHitUp(22);
 	dto.setItitle("wpaff");
 	dto.setIcontent("독특한 본문 수정함\n수정완료");
     result = iDao.modifyInfo(dto);

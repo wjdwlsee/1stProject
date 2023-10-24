@@ -8,12 +8,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="${conPath}/css/board.css" rel="stylesheet">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 <body>
-	<body>
+
 	<c:if test="${not empty adminLoginResult }">
 		<script>
 			alert('${adminLoginResult}');
@@ -25,6 +26,7 @@
 			history.back();
 		</script>
 	</c:if>
+	<jsp:include page="../main/header.jsp"/>
 	<div id="content_form">
 		<table>
 			<caption>전체회원보기</caption>

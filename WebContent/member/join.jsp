@@ -13,6 +13,9 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 </head>
 <body>
 <script>
@@ -106,6 +109,20 @@
     });
   });
  </script>
+ <header> 
+		<div class="gnb">
+				<ul>
+					<li><a href="${conPath }/member/login.jsp">로그인</a></li>
+					<li><a href="${conPath }/main/main.jsp">홈</a></li>
+					
+				</ul>
+	
+		</div>
+		<div class="logo" onclick="location.href='${conPath }/main/main.jsp'">
+			<p>여행은 개인의 취향이다 </p>
+
+		</div> 
+</header>
  <div id="content_form">
 		<form action="${conPath }/join.do" method="post" enctype="multipart/form-data">
 			<table>

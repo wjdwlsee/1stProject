@@ -77,7 +77,7 @@ public class TController extends HttpServlet {
 		}else if(command.equals("/adminLogin.do")) {
 			service = new ALoginService();
 			service.execute(request, response);
-			viewPage = "allView.do";
+			viewPage = "info/infoList.jsp";
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * 
 		 * * * * * * * * 파일첨부 게시판 관련 요청  * * * * * * * * * *
 		 * * * * * * * * * * * * * * * * * * * * * * * * * * */

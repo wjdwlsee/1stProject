@@ -27,8 +27,8 @@ public class infoListService implements Service {
 		int startRow = (currentPage-1) * PAGESIZE +1;
 		int endRow   = startRow + PAGESIZE -1;
 		InfoDao iDao = InfoDao.getInstance();
-		ArrayList<InfoDto> infolist =  iDao.infolist(startRow, endRow);
-		request.setAttribute("InfoList", infolist);
+		ArrayList<InfoDto> infoList =  iDao.infolist(startRow, endRow);
+		request.setAttribute("infoList", infoList);
 		int totCnt = iDao.getinfoCnt(); // 글갯수
 		int pageCnt = (int)Math.ceil((double)totCnt/PAGESIZE);//페이지갯수
 		int startPage = ((currentPage-1)/BLOCKSIZE)*BLOCKSIZE+1;
