@@ -12,11 +12,11 @@ public class infoContentService implements Service {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		int iid = Integer.parseInt(request.getParameter("fid"));
+		int iid = Integer.parseInt(request.getParameter("iid"));
 		InfoDao iDao = InfoDao.getInstance();
 		iDao.hitUp(iid);
-		InfoDto infocontent = iDao.getInfoNotHitUp(iid);
-		request.setAttribute("infocontent", infocontent);
+		InfoDto info = iDao.getInfoNotHitUp(iid);
+		request.setAttribute("info", info);
 
 	}
 

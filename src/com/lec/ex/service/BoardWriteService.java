@@ -23,7 +23,7 @@ public class BoardWriteService implements Service {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		String path = request.getRealPath("fileBoardUp");
+		String path = request.getRealPath("freeBoardup");
 		int maxSize = 1024*1024*10; // 최대업로드 사이즈는 10M
 		MultipartRequest mRequest = null;
 		String ffileName = "";

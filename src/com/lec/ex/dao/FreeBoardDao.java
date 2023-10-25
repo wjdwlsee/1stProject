@@ -200,20 +200,18 @@ public class FreeBoardDao {
 			int result = FAIL;
 			Connection        conn  = null;
 			PreparedStatement pstmt = null;
-			String sql = "UPDATE FREEBOARD " + 
-					"  SET FNAME = ? , " + 
-					"      FTITLE = ? , " + 
-					"      FCONTENT = ? , " + 
-					"      FIP = ?  " + 
-					"    WHERE FID=? ";
+			String sql = "UPDATE FREEBOARD SET "
+					+ 					"FTITLE = ? , " + 
+					"                    FCONTENT = ?, " + 
+					"                    fFILENAME = ?" + 
+					"            WHERE FID = ? ";
 			try {
 				conn = ds.getConnection();
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, dto.getFtitle());
 				pstmt.setString(2, dto.getFcontent());
 				pstmt.setString(3, dto.getFfileName());
-				pstmt.setString(4, dto.getFip());
-				pstmt.setInt(5, dto.getFid());
+				pstmt.setInt(4, dto.getFid());
 				result = pstmt.executeUpdate();
 				System.out.println(result == SUCCESS ? "글수정 성공":" 오류");
 			} catch (SQLException e) {

@@ -26,13 +26,21 @@ public class infoWriteService implements Service {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		String path = request.getRealPath("infoFileUp");
 		int maxSize = 1024*1024*10; // 최대업로드 사이즈는 10M
-		String ffileName = "", dbFileName = null;
+		String[] filenames = {"",""};
+		String[] oriFilenames = {"",""};
 		int result = InfoDao.FAIL;
 		try {
 			MultipartRequest mRequest = new MultipartRequest(request, path, maxSize, "utf-8", new DefaultFileRenamePolicy());
 			Enumeration<String> params = mRequest.getFileNames();
-			String param = params.nextElement();
-			ffileName = mRequest.getFilesystemName(param);
+			int idx = 0;
+			while(params.hasMoreElements()){
+				String param = params.nextElement(); // 파라미터 이름
+				filenames[idx] = mRequest.getFilesystemName(param); // 해당 파라미터 이름으로 저장된 파일이름
+				oriFilenames[idx] = mRequest.getOriginalFileName(param); // 해당 파라미터 이름으로 첨부한 오리지널이름
+				System.out.println(idx + "번째 파라미터 : " + param + 
+						", 서버에 저장된 파일 이름:" + filenames[idx] + ", 첨부한 오리지널 파일이름:" + oriFilenames[idx]);
+				idx++;
+			}
 			HttpSession httpSession = request.getSession();
 			InfoDto info = (InfoDto)httpSession.getAttribute("info");
 			if(info!=null) {
@@ -60,13 +68,13 @@ public class infoWriteService implements Service {
 			request.setAttribute("infoResult", "글수정 실패");
 		}
 		// 서버에 올라간 fileboardUp 파일을 소스폴더에 filecopy (파일 수정을 안 했거나, 예외가 떨어질 경우 복사 안 함)
-		if(ffileName!=null && result==AdminDao.LOGIN_SUCCESS) { 
+		if(filenames!=null && result==AdminDao.LOGIN_SUCCESS) { 
 			InputStream  is = null;
 			OutputStream os = null;
 			try {
-				File serverFile = new File(path+"/"+ffileName);
+				File serverFile = new File(path+"/"+filenames);
 				is = new FileInputStream(serverFile);
-				os = new FileOutputStream("C:/Webpro/source/08_1stProject/Tirp/WebContent/infoFileUp/"+ffileName);
+				os = new FileOutputStream("C:/Webpro/source/08_1stProject/Tirp/WebContent/infoFileUp/"+filenames);
 				byte[] bs = new byte[(int)serverFile.length()];
 				while(true) {
 					int nByteCnt = is.read(bs);

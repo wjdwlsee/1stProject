@@ -54,7 +54,13 @@
   		</div>
  	 </div>
     <div class="section1">
-      <div class="slide_banner">slide banner</div>
+      <div class="slide_banner">정보선택
+      	<ul>
+	      	<li>자유게시판 가기
+    		  	<a href="${conPath }/info.jsp">자유게시판 글</a>
+      		</li>
+      	</ul>
+      </div>
       <div class="side_banner">side banner</div>
     </div> <!-- .section1 -->
     <div class="section2">

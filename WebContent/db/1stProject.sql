@@ -173,20 +173,20 @@ INSERT INTO FREEBOARD (FID, MID, FTITLE, FCONTENT, FFILENAME, FGROUP, FSTEP, FIN
 --INFO
 SELECT* FROM INFO;
 INSERT INTO INFO (IID, AID, ITITLE, ICONTENT, LNO, TNO, IFILENAME,IFILENAME2 ,IHIT,IINDENT,IIP)
-    VALUES (INFO_SEQ.NEXTVAL, 'GAN','단풍구경가자','서울에서 가장 이쁜 단풍이 피는곳은?',1,5,'단풍.jpg','설악산정원연못.jpg',0,0,'192.1.1.1');
+    VALUES (INFO_SEQ.NEXTVAL, 'GAN','단풍구경가자','서울에서 가장 이쁜 단풍이 피는곳은?',1,5,'danpong.jpg',null,0,0,'192.1.1.1');
 INSERT INTO INFO (IID, AID, ITITLE, ICONTENT, LNO,TNO, IFILENAME,IFILENAME2 ,IHIT,IINDENT,IIP)
-    VALUES (INFO_SEQ.NEXTVAL, 'GAN','<공지사항>여행위험지역이 발생했습니다','설악산 낙석주의',2,5,'',NULL,0,1,'192.1.1.1');
+    VALUES (INFO_SEQ.NEXTVAL, 'GAN','<공지사항>여행위험지역이 발생했습니다','설악산 낙석주의',2,5,'rock.jpg',NULL,0,1,'192.1.1.1');
 INSERT INTO INFO (IID, AID, ITITLE, ICONTENT, LNO,TNO, IFILENAME,IFILENAME2 ,IHIT,IINDENT,IIP)
-    VALUES (INFO_SEQ.NEXTVAL, 'GAN','<공지사항>양양해수욕장 폐쇄','상어출몰',2,7,'',NULL,0,1,'192.1.1.1');
+    VALUES (INFO_SEQ.NEXTVAL, 'GAN','<공지사항>양양해수욕장 폐쇄','상어출몰',2,7,'shack.jpg',NULL,0,1,'192.1.1.1');
 INSERT INTO INFO (IID, AID, ITITLE, ICONTENT, LNO,TNO, IFILENAME,IFILENAME2 ,IHIT,IINDENT,IIP)
-    VALUES (INFO_SEQ.NEXTVAL, 'GAN','가을은 캠핑의 계절','글램핑 어때?',4,7,'글램핑.jpg','글램핑음식.jpg',0,0,'192.1.1.3');
-    
+    VALUES (INFO_SEQ.NEXTVAL, 'GAN','가을은 캠핑의 계절','글램핑 어때?',4,7,null,null,0,0,'192.1.1.3');
+delete from info where lno = 1;
 
 --LIKELIST
 SELECT * FROM LIKELIST; 
 INSERT INTO LIKELIST (NO, MID,IID) VALUES (LIKELIST_SEQ.NEXTVAL, 'son',1);
 
-
+commit;
 
 
 

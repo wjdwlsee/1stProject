@@ -30,12 +30,12 @@ public class LocationDao {
 			System.out.println(e.getMessage());
 		}
 	}
-	public ArrayList<LocationDto> listBoard(){
+	public ArrayList<LocationDto> listLocation(){
 		ArrayList<LocationDto> dtos =new ArrayList<LocationDto>();
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
 		ResultSet         rs    = null;
-		String sql = "SELECT * FROM (SELECT ROWNUM RN , A.* FROM (SELECT * FROM LOCATION )A) " ;
+		String sql = "SELECT * FROM LOCATION ORDER BY TNO" ;
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -57,6 +57,34 @@ public class LocationDao {
 			} 
 		}
 		return dtos;	
+	}
+	public LocationDto getList(int lno) {
+		LocationDto location = null;
+		Connection        conn  = null;
+		PreparedStatement pstmt = null;
+		ResultSet         rs    = null;
+		String sql = "SELECT * FROM LOCATION WHERE LNO = ? ";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, lno);
+			rs = pstmt.executeQuery();	
+			if(rs.next()) {
+				String lname = rs.getString("lname");
+				location = new LocationDto(lno, lname);
+			}
+		}catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(rs   !=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(conn !=null) conn.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return location;
 	}
 	public int insertLocation(LocationDto dto) {
 		int result = FAIL;

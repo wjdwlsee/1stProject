@@ -130,11 +130,11 @@ public class TController extends HttpServlet {
 		}else if(command.equals("/infoContent.do")) {
 			service = new infoContentService();
 			service.execute(request, response);
-			viewPage = "freeBoard/infoContent.jsp";
+			viewPage = "info/infoContent.jsp";
 		}else if(command.equals("/infoModifyView.do")) {
 			service = new infoModifyViewService();
 			service.execute(request, response);
-			viewPage = "freeBoard/infoModify.jsp";
+			viewPage = "info/infoModify.jsp";
 		}else if(command.equals("/infoModify.do")) {
 			service = new infoModifyService();
 			service.execute(request, response);
@@ -143,6 +143,10 @@ public class TController extends HttpServlet {
 			service = new infoDeleteService();
 			service.execute(request, response);
 			viewPage = "infoList.do";
+		}else if(command.equals("/info.do")) {
+			service = new infoSelect();
+			service.execute(request, response);
+			viewPage = "info.jsp";
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);

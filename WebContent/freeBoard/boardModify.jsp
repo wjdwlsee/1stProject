@@ -27,7 +27,11 @@
 	<form action="${conPath }/boradModify.do" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="pageNum" value="${param.pageNum }">
 		<input type="hidden" name="fid" value="${board.fid }">
+		<input type="hidden" name="ftitle" value="${board.ftitle }">
+		<input type="hidden" name="fcontent" value="${board.fcontent }">
 		<input type="hidden" name="dbFileName" value="${board.ffileName }">
+		<input type="hidden" name="mname" value="${board.mname }">
+		<input type="hidden" name="mid" value="${board.mid }">
 		<table>
 			<caption>${board.fid }번 글 수정</caption>
 			<tr><th>작성자</th>

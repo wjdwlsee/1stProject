@@ -45,8 +45,8 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					<c:if test="${member.mid eq board.mid }">
 				 		<button onclick="location='${conPath}/boardModifyView.do?fid=${board.fid }&pageNum=${param.pageNum }'">수정</button>
+					<c:if test="${member.mid eq board.mid }">
 				 	</c:if>
 				 	<c:if test="${member.mid eq board.mid or not empty admin}">
 	 					<!-- 

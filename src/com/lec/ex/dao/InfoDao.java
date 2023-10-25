@@ -206,10 +206,10 @@ public class InfoDao {
 		PreparedStatement pstmt = null;
 		String sql = "UPDATE INFO " + 
 				"  SET ITITLE = ? , " + 
-				"      ICONTENT = ?  " + 
+				"      ICONTENT = ? , " + 
 				"      IFILENAME = ? , " + 
-				"      IFILENAME2 = ? , " + 
-				"    WHERE IID=? ";
+				"      IFILENAME2 = ?  " + 
+				"    WHERE IID=? " ;
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);

@@ -13,7 +13,7 @@
 	<%
 		FreeBoardDao bDao = FreeBoardDao.getInstance();
 		out.println("<h3>1. 글 목록 </h3>");
-		ArrayList<FreeBoardDto> dtos = bDao.listBoard(11, 15);
+		ArrayList<FreeBoardDto> dtos = bDao.listBoard(1, 15);
 		for(FreeBoardDto dto : dtos){
 			out.println(dto + "<br>");
 		}
@@ -26,11 +26,11 @@
 		out.print("2번 글:" + bDao.getBoardNotHitUp(3) + "<br>");
 		out.print("<h3>4와 5. 조회수 올리고, 글번호로 dto가져오기</h3>");
 		bDao.hitUp(190);
-		out.print("2번글 상세보기 : " + bDao.getBoardNotHitUp(3) + "조회수 올리고 상세보기");
+		out.print("2번글 상세보기 : " + bDao.getBoardNotHitUp(6) + "조회수 올리고 상세보기");
 		out.print("<h3>7. 글수정");
-		//dto = bDao.getBoardNotHitUp(216); // 2번 글 정보
-		dto.setMname("독특자");
-		dto.setFcontent("독특한 제목");
+		dto = bDao.getBoardNotHitUp(6); // 2번 글 정보
+		dto.setFtitle("asd");
+		dto.setFcontent("adrfhj");
 		result = bDao.modifyBoard(dto);
 		out.print(result == FreeBoardDao.SUCCESS ? " 성공</h3>" : " 실패</h3>");
 		out.print("<h3>8. 글 삭제</h3>");

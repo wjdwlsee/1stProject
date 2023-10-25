@@ -37,8 +37,9 @@
     <c:if test="${not empty member and empty admin}"> <%-- 사용자 모드 로그인 화면--%>
 		<div class="gnb">
 				<ul>
-					<li><a href=${conPath }/member/join.jsp">회원가입</a></li>
+					<li><a href="${conPath }/member/join.jsp">회원가입</a></li>
 					<li><a href="${conPath }/member/login.jsp">로그인</a></li>
+					<li><a href="${conPath }/info/info.jsp">정보</a></li>
 				</ul>
 	
 		</div>

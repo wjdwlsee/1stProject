@@ -55,7 +55,7 @@
 						<p>
 							<input type="submit" value="로그인" class="btn">
 							<input type="button" value="회원가입" class="btn"
-									onclick="location='${conPath}/joinView.do'">
+									onclick="history.back()">
 						</p>
 					</td>
 				</tr>

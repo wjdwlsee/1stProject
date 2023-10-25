@@ -21,7 +21,7 @@ public class BoardModifyService implements Service {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		String path = request.getRealPath("fileBoardUp");
+		String path = request.getRealPath("freeBoardup");
 		int maxSize = 1024*1024*10; // 최대업로드 사이즈는 10M
 		String ffileName = "", dbFileName = null;
 		int result = FreeBoardDao.FAIL;
@@ -36,13 +36,14 @@ public class BoardModifyService implements Service {
 			}
 			// mId, fTitle, fContent,  fileName, fIp
 			int fid = Integer.parseInt(mRequest.getParameter("fid"));
+			String mid = mRequest.getParameter("mid");
+			String mname = mRequest.getParameter("mname"); 
 			String ftitle = mRequest.getParameter("ftitle");
 			String fcontent = mRequest.getParameter("fcontent");
 			String fip = request.getRemoteAddr();
 			FreeBoardDao boardDao = FreeBoardDao.getInstance();
-			FreeBoardDto boardDto = new FreeBoardDto(fid, null, null, ftitle, fcontent, 
-											ffileName, null, 0, 0, 0, 0, fip);
-			result = boardDao.modifyBoard(boardDto);
+			FreeBoardDto dto = new FreeBoardDto(fid, mid, mname, ftitle, fcontent, ffileName, null, 0, 0, 0, 0, fip);
+			result = boardDao.modifyBoard(dto);
 			if(result == FreeBoardDao.SUCCESS) { 
 				request.setAttribute("boaredResult", "글수정 성공");
 			}else {
