@@ -11,6 +11,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import com.lec.ex.dto.LocationDto;
 import com.lec.ex.dto.ThemeDto;
 
 public class ThemeDao {
@@ -56,6 +57,34 @@ public class ThemeDao {
 			} 
 		}
 		return dtos;	
+	}
+	public ThemeDto getList(int tno) {
+		ThemeDto theme = null;
+		Connection        conn  = null;
+		PreparedStatement pstmt = null;
+		ResultSet         rs    = null;
+		String sql = "SELECT * FROM LOCATION WHERE TNO = ? ";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, tno);
+			rs = pstmt.executeQuery();	
+			if(rs.next()) {
+				String tname = rs.getString("tname");
+				theme = new ThemeDto(tno, tname);
+			}
+		}catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(rs   !=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(conn !=null) conn.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return theme;
 	}
 	public int insertTheme(ThemeDto dto) {
 		int result = FAIL;

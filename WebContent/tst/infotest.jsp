@@ -17,6 +17,10 @@
 	for(InfoDto dto :dtos){
 		out.println(dto + "<br>");
 	}
+	InfoDto iDtos = iDao.getBestlist(1, 5);
+	out.println("<hr>");
+	out.print("#######:" + iDao.getBestlist(1, 5) + "<br>");
+	out.println("<hr>");
 	out.println("<h3>2. 글갯수 : " + iDao.getinfoCnt() + "</h3>");
 	out.println("<h3>3. 원글쓰기");
 	InfoDto dto = new InfoDto(10, "GAN", "메롱", "", 1 ,null, 1 ,null, "K","", null, 0, 1, "199.5.2.1");

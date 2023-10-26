@@ -199,6 +199,47 @@ public class InfoDao {
 		}
 		return dto;
 	}
+	//lno,tno로 리스트 가져오기
+	public ArrayList<InfoDto> getBestlist(int lno, int tno) {
+		ArrayList<InfoDto> dtos = new ArrayList<InfoDto>();
+		Connection        conn  = null;
+		PreparedStatement pstmt = null;
+		ResultSet         rs    = null;
+		String sql = " SELECT I.*,LNAME,TNAME FROM INFO I, LOCATION L, THEME T WHERE I.LNO=L.LNO AND T.TNO=I.TNO AND I.LNO= ? AND I.TNO = ?  " ;
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, lno);
+			pstmt.setInt(2, tno);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				int    iid= rs.getInt("iid");
+				String aid = rs.getString("aid");
+				String ititle = rs.getString("ititle");
+				String icontent = rs.getString("icontent");
+				String lname = rs.getString("lname");
+				String tname = rs.getString("tname");
+				String ifilename = rs.getString("ifilename");
+				String ifilename2 = rs.getString("ifilename2");
+				Date irdate = rs.getDate("irdate");
+				int    ihit = rs.getInt("ihit");		
+				int    iindent= rs.getInt("iindent");
+				String iip = rs.getString("iip");
+				dtos.add(new InfoDto(iid, aid, ititle, icontent, lno, lname, tno, tname, ifilename, ifilename2, irdate, ihit, iindent, iip));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(rs    != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn  != null) conn.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			} 
+		}
+		return dtos;
+	}
 // (6) 글 수정하기 
 	public int modifyInfo(InfoDto dto) {
 		int result = FAIL;

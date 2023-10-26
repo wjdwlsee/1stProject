@@ -35,7 +35,7 @@ public class LocationDao {
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
 		ResultSet         rs    = null;
-		String sql = "SELECT * FROM LOCATION ORDER BY TNO" ;
+		String sql = "SELECT * FROM LOCATION ORDER BY LNO" ;
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);

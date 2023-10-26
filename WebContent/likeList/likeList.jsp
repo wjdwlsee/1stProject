@@ -12,28 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
-<style>
-	#content_form {
-		height:470px;
-		margin: 30px auto 0px;
-	}
-	#content_form table tr { height: 10px;}
-</style>
-
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-</head>
-<body>
-
 <script>
-	/*$(document).ready(function(){
-		$('tr').click(function(){
-			var aid = Number($(this).children().eq(0).text()); // 0번째 td안의 있는 text;
-			//alert(aid);
-			if(!isNaN(aid)){
-				location.href = '${conPath}/infoContent.do?aid='+aid+'&pageNum=${pageNum}';
-			}
-		});
-	});*/
 	function tdClicked(iid){
 		if(!isNaN(iid)){
 			location.href = '${conPath}/infoContent.do?iid='+iid+'&pageNum=${pageNum}';
@@ -42,20 +21,9 @@
 </script>
 </head>
 <body>
-<header> 
-		<div class="gnb">
-				<ul>
-					<li><a href="${conPath }/member/login.jsp">로그인</a></li>
-					<li><a href="${conPath }/member/join.jsp">회원가입</a></li>
-					
-				</ul>
-	
-		</div>
-		<div class="logo" onclick="location.href='${conPath }/main/main.jsp'">
-			<p>여행은 개인의 취향이다 </p>
-
-		</div> 
-</header>
+<jsp:include page="../main/header.jsp"/>
+	  <div class="hit_product">
+		      
 		<c:if test="${not empty infoModiResult}">
 			<script>alert('${infoModiResult}')
 					hitory.back();
@@ -76,9 +44,6 @@
 				</ul>
 		 		</div>
 			 </div>
-		   <div class="section1">
-		     <div class="slide_banner">slide banner</div>
-		   </div> <!-- .section1 -->
 		   <div class="section2">
 		     <div class="hit_product">
 		      
@@ -142,28 +107,3 @@
   </div><!-- #content -->
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

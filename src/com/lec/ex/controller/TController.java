@@ -143,10 +143,35 @@ public class TController extends HttpServlet {
 			service = new infoDeleteService();
 			service.execute(request, response);
 			viewPage = "infoList.do";
+		}else if(command.equals("/infoView.do")) {
+			viewPage = "info/info.jsp";
 		}else if(command.equals("/info.do")) {
 			service = new infoSelect();
 			service.execute(request, response);
-			viewPage = "info.jsp";
+			viewPage = "info/info2.jsp";
+		}else if(command.equals("/info2.do")) {
+			service = new infoSelect2();
+			service.execute(request, response);
+			viewPage = "infoBest.do";
+		}else if(command.equals("/infoBest.do")) {
+			service = new infoBest();
+			service.execute(request, response);
+			viewPage = "info/infoBest.jsp";
+		//************************************
+		//********likelist******************
+		//************************************
+		}else if(command.equals("/likeList.do")) {
+			service = new likeListAll();
+			service.execute(request, response);
+			viewPage = "likeList/likeList.jsp";
+		}else if(command.equals("/listInsert.do")) {
+			service = new likeListContent();
+			service.execute(request, response);
+			viewPage = "likeList/likeList.jsp";
+		}else if(command.equals("/listContent.do")) {
+			service = new likeListContent();
+			service.execute(request, response);
+			viewPage = "likeList/iistContent.jsp";
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);

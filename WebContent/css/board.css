@@ -12,7 +12,6 @@ header{
 p{font-size: 20px; color: #808080;}
 header a {text-decoration: none; font-weight: bold;}
 header li { list-style: none;}
-header .gnb{}
 header .gnb ul {
 	overflow: hidden;
 	width:1000px;

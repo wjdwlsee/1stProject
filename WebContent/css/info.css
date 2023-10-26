@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+*{background-image: url('../img/photo.png');   
+	font-family: 'Gaegu', sans-serif;
+font-family: 'Hi Melody', sans-serif;
+
+}
+h1{text-align: center; padding-top: 50px;}
+.select_area {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 0 10px;
+    font-weight:bold; 
+}
+
+.select_area .stit {
+    display: block;
+    margin-top: -10px;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -1px;
+    color: #333;
+}
+
+.select_area ul {
+	margin-top:180px;
+    padding: 50px 30px 60px;
+    margin-left: 35px;
+   list-style-type: none;
+}
+
+.select_area ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.select_area ul li {
+    float: left;
+    padding: 0 0 10px 10px;
+}
+.select_area input[type="submit"] {
+margin-left: 500px;
+
+}
+.select_area input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+.select_area input[type="radio"] + label {
+    position: relative;
+    display: inline-block;
+    height: 45px;
+    padding-left: 163px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.select_area input[type="radio"] + label span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    height: 45px;
+    letter-spacing: -1px;
+    line-height: 45px;
+    text-align: center;
+    color: #000;
+}
+
+.select_area input[type="radio"] + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 163px;
+    height: 45px;
+    border-radius: 50px;
+    background: #fff;
+}
+
+.select_area input[type="radio"] + label:after,  label:after {
+    display: none;
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 7px;
+    height: 16px;
+    border-radius: 100%;
+}
+
+.select_area input[type="radio"]:checked + label:before {
+    background: #afc9f8;
+    box-shadow: 0px 10px 27px 0px rgba(76, 79, 86, 0.38);
+}
+
+.select_area input[type="radio"]:checked + label span  {
+    color: #fff;
+}
+
+
+#content { width:1000px;}
+#content .section1 {
+   
+    overflow: hidden;
+}
+
+#content .section1 > div {
+    border: 1px solid gray;
+    box-sizing: border-box;
+    float: left;
+    width:400px;
+    height: 400px;
+    line-height: 400px;
+    text-align: center;
+}

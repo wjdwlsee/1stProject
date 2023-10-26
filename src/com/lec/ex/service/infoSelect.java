@@ -15,9 +15,6 @@ public class infoSelect implements Service {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int lno = Integer.parseInt(request.getParameter("lno")); 
-		int mid = Integer.parseInt(request.getParameter("mid")); 
-		HttpSession httpSession = request.getSession();
-		MemberDto member = (MemberDto)httpSession.getAttribute("member");
 		LocationDao lDao = LocationDao.getInstance();
 		request.setAttribute("llist", lDao.listLocation());
 		LocationDto location = lDao.getList(lno);
