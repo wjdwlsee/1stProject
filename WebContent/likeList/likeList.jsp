@@ -24,8 +24,8 @@
 <jsp:include page="../main/header.jsp"/>
 	  <div class="hit_product">
 		      
-		<c:if test="${not empty infoModiResult}">
-			<script>alert('${infoModiResult}')
+		<c:if test="${not empty likeListResult}">
+			<script>alert('${likeListResult}')
 					hitory.back();
 			</script>
 		</c:if>
@@ -67,12 +67,7 @@
 				</c:if>
 		</table>
 		 <table >
-      		<tr>
-				<td>
-					<c:if test="${not empty admin }"><a href="${conPath }/infoWriteView.do">글쓰기</a></c:if>
-					<c:if test="${empty admin }"><a href="${conPath }/adminLoginView.do?next=infoWriteView.do">글쓰기는 관리자 로그인 이후에만 가능합니다</a></c:if>
-				</td>
-			</tr>
+      		
       </table>
 		<p class="paging">
 			<a href="${conPath }/infoList.do?pageNum=1">&lt;&lt;</a>

@@ -8,8 +8,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title> 
- 
-  <link href="${conPath }/css/main.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href ="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400&family=Hi+Melody&family=Sunflower:wght@300&display=swap" rel="stylesheet">	
+<link href="${conPath }/css/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <c:if test="${not empty param.next && empty loginErrorMsg}">
@@ -43,50 +46,27 @@
   <div id="content">
   	<div class = "board">
   		<div class="lnb"> 
-  		 	<ul>
-				<li>자유게시판 가기<ol class="subMenu">
-							<li><a href="${conPath }/boardList.do">자유게시판 글</a></li>
-							<li><a href="#">메뉴1-2</a></li>
-							<li><a href="#">메뉴1-3</a></li>
-							</ol>
-				</li>
-			</ul>
+			<c:if test="${empty member }"><a href="${conPath }/loginView.do?next=infoList.do">정보게시판은 로그인 후 사용가능 합니다</a></c:if>
+			<button type="button" class="btn btn-outline-dark btn-lg " onclick="location='${conPath }/boardList.do'">자유게시판</button>
+			<button type="button" class="btn btn-outline-dark btn-lg" onclick="location='${conPath }/infoList.do'">정보게시판</button>			
   		</div>
  	 </div>
+    <jsp:include page="../location/asdf.jsp"/>
     <div class="section1">
-      <div class="slide_banner">정보선택
-      	<ul>
-	      	<li>자유게시판 가기
-    		  	<a href="${conPath }/info.jsp">자유게시판 글</a>
-      		</li>
-      	</ul>
+      <caption></caption>
+      <div class="slide_banner">
+	     
       </div>
-      <div class="side_banner">side banner</div>
     </div> <!-- .section1 -->
     <div class="section2">
       <div class="hit_product">
-        <ul>
-          <li><a href="#">hit_product1</a></li>
-          <li><a href="#">hit_product2</a></li>
-          <li><a href="#">hit_product3</a></li>
-          <li><a href="#">hit_product4</a></li>
-        </ul>
+        <form>
+        	<input type="text" > 
+         </form>
       </div> <!-- .hit_product -->
-      <div class="md_product">
-        <ul>
-          <li><a href="#">md_product1</a></li>
-          <li><a href="#">md_product1</a></li>
-          <li><a href="#">md_product1</a></li>
-          <li><a href="#">md_product1</a></li>
-        </ul>
-      </div><!-- .md_product -->
+      
     </div><!-- .section2 -->
   </div><!-- #content -->
-  <footer>
-    <div class="office_logo">office logo</div>
-    <div class="office_address">office address</div>
-    <div class="shopping_info">shopping info</div>
-    <div class="copyright">Copyright ⓒ Joeun System Corp. All rights reserved.</div>
-  </footer>
+ 	<jsp:include page="../main/footer.jsp"/>
 </body>
 </html>

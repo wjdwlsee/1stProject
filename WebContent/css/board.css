@@ -79,7 +79,7 @@ header .lnb a {
 	background-color: #ffffff;  overflow: hidden;
 }
 #content_form table tr:hover { 
-	background-color: #ededed; cursor: pointer;
+	background-color: #ffffff; cursor: pointer;
 }
 #content_form td, #content_form th {
 	text-align: center; padding:3px; float:left; 

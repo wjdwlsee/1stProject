@@ -5,13 +5,16 @@
 font-family: 'Hi Melody', sans-serif;
 
 }
+
 h1{text-align: center; padding-top: 50px;}
 .select_area {
     width: 1000px;
     margin: 0 auto;
     padding: 0 0 10px;
     font-weight:bold; 
+    position: absolute;
 }
+
 
 .select_area .stit {
     display: block;

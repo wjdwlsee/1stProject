@@ -77,7 +77,8 @@ public class TController extends HttpServlet {
 		}else if(command.equals("/adminLogin.do")) {
 			service = new ALoginService();
 			service.execute(request, response);
-			viewPage = "info/infoList.jsp";
+			viewPage = "main/main.jsp";
+		
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * 
 		 * * * * * * * * 파일첨부 게시판 관련 요청  * * * * * * * * * *
 		 * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -157,6 +158,10 @@ public class TController extends HttpServlet {
 			service = new infoBest();
 			service.execute(request, response);
 			viewPage = "info/infoBest.jsp";
+		}else if(command.equals("/location.do")) {
+			service = new infoSelect();
+			service.execute(request, response);
+			viewPage = "location/location.jsp";
 		//************************************
 		//********likelist******************
 		//************************************
@@ -165,7 +170,7 @@ public class TController extends HttpServlet {
 			service.execute(request, response);
 			viewPage = "likeList/likeList.jsp";
 		}else if(command.equals("/listInsert.do")) {
-			service = new likeListContent();
+			service = new likeListInsert();
 			service.execute(request, response);
 			viewPage = "likeList/likeList.jsp";
 		}else if(command.equals("/listContent.do")) {

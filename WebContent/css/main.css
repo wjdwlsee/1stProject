@@ -1,16 +1,9 @@
 @charset "UTF-8";
-@font-face { /* 두 폰트 설정 */
-    font-family: 'Merriweather-Light';
-    src: url('../font/Merriweather-Light.ttf'); /*css파일 기준으로*/
-}
-@font-face {
-    font-family: 'Merriweather-Regular';
-    src: url('../font/Merriweather-Regular.ttf')
-}
 *{
     margin:0; padding:0;
-   font-family: 'Caveat', cursive;
-   font-family: 'Grandiflora One', cursive;
+   font-family: 'Gaegu', sans-serif;
+font-family: 'Hi Melody', sans-serif;
+font-family: 'Sunflower', sans-serif;
 }
 a{text-decoration:none; color:black; display:block;}
 li{list-style:none;}
@@ -21,11 +14,12 @@ li{list-style:none;}
     width:1000px; margin:0 auto;
 }
 #content .lnb {
-
-  margin :10px 0 10px 0;
-  border-top: 1px dashed #887718;
-  border-bottom: 1px dashed #887718;
+  height : 70px;
+  text-align :center;
+  margin :10px;
+  padding:10px 0 10px 0; 
 }
+#content .lnb
 #content .lnb ul{
 	overflow: hidden;
 	width:300px;
@@ -59,59 +53,33 @@ li{list-style:none;}
 #content .section1 .side_banner {
     width: 300px;
 }
-    /* * * * * #content .section2 * * * * */
-    #content .section2 .hit_product {
-        margin: 10px 0;
-    }
-
-    #content .section2 .hit_product,
-    #content .section2 .md_product {
-        border: 1px solid gray;
-    }
-
-        #content .section2 .hit_product ul,
-        #content .section2 .md_product ul {
-            overflow: hidden;
-            /*width:998px <= 마진5개 포함*/
-        }
-
-    #content .section2 ul > li{
-        float: left;
-        height: 400px;
-        line-height: 400px;
-        text-align: center;
-        border: 1px solid gray;
-        box-sizing: border-box;
-        width: 24%;
-        margin-right: 0.8%;
-    }
-
-        #content .section2 ul > li:first-child {
-            margin-left: 0.8%;
-        }
-/* * * * * footer * * * * * */
-footer {
-    width: 1000px;
-    margin: 5px auto;
-    height: 150px;
-    overflow: hidden;
+/* * * * * #content .section2 * * * * */
+#content .section2 .hit_product {
+    margin: 10px 0;
 }
 
-    footer div:nth-child(1),
-    footer div:nth-child(2),
-    footer div:nth-child(3) {
-        float: left;
-        width: 33.33%;
-        height: 100px;
-        border: 1px solid gray;
-        box-sizing: border-box;
-    }
+#content .section2 .hit_product,
+#content .section2 .md_product {
+    border: 1px solid gray;
+}
 
-    footer div:last-child {
-        clear: both; /* 앞의 float속성(left나 right)을 clear */
-        height: 50px;
-        line-height: 50px;
-        text-align: center;
-        background-color: black;
-        color: white;
-    }
+#content .section2 .hit_product ul,
+#content .section2 .md_product ul {
+    overflow: hidden;
+    /*width:998px <= 마진5개 포함*/
+}
+
+#content .section2 ul > li{
+    float: left;
+    height: 400px;
+    line-height: 400px;
+    text-align: center;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    width: 24%;
+    margin-right: 0.8%;
+}
+
+#content .section2 ul > li:first-child {
+    margin-left: 0.8%;
+}

@@ -1,0 +1,27 @@
+[
+	{
+		"lno":"1",
+		"name":"서울",
+		"url":"(seoul.jpg)"
+	},
+	{
+		"lno":"2",
+		"name":"경기",
+		"url":"(kung.jpg)"
+	},
+	{
+		"lno":"3",
+		"name":"인천",
+		"url":"(incheondaegyo.jpg)"
+	},
+	{
+		"lno":"4",
+		"name":"강원",
+		"url":"(sulak.jpg)"
+	},
+	{
+		"lno":"5",
+		"name":"충북",
+		"url":"(guesan.jpg)"
+	}
+]

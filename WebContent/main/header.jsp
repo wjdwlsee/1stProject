@@ -20,7 +20,7 @@
 <body>
  	<header> 
  	<c:if test="${empty member and empty admin}"> <%-- 로그인 전 화면 --%>
-		<div class="gnb">
+		<div class="gnb" >
 				<ul>
 					<li><a href="${conPath }/member/login.jsp">로그인</a></li>
 					<li><a href="${conPath }/member/join.jsp">회원가입</a></li>
@@ -37,9 +37,7 @@
     <c:if test="${not empty member and empty admin}"> <%-- 사용자 모드 로그인 화면--%>
 		<div class="gnb">
 				<ul>
-					<li><a href="${conPath }/member/join.jsp">회원가입</a></li>
-					<li><a href="${conPath }/member/login.jsp">로그인</a></li>
-					<li><a href="${conPath }/infoView.do">정보</a></li>
+					<li><a href="${conPath }/logout.do">로그아웃</a></li>
 				</ul>
 	
 		</div>
@@ -49,12 +47,11 @@
 		</div>
 	</c:if>
 	<c:if test="${empty member and not empty admin}"> <%-- 관리자 모드 로그인 화면--%>
-		<div class="gnb">
+		<div class="gnb" id="loginadmin">
 				<ul>
-					<li><a href="${conPath }/member/join.jsp">회원가입</a></li>
-					<li><a href="${conPath }/member/login.jsp">로그인</a></li>
 					<li><a href="${conPath }/member/mAllView.jsp">회원모두 보기</a></li>
 					<li><a href="${conPath }/info/infoList.jsp">정보게시판</a></li>
+					<li><a href="${conPath }/logout.do">로그아웃</a></li>
 				</ul>
 	
 		</div>

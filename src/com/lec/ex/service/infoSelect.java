@@ -1,5 +1,7 @@
 package com.lec.ex.service;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -14,8 +16,10 @@ public class infoSelect implements Service {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		int lno = Integer.parseInt(request.getParameter("lno")); 
+		int lno = Integer.parseInt(request.getParameter("lno"));
 		LocationDao lDao = LocationDao.getInstance();
+		ArrayList<LocationDto> locations = lDao.listLocation();
+		request.setAttribute("locations",locations);
 		request.setAttribute("llist", lDao.listLocation());
 		LocationDto location = lDao.getList(lno);
 		request.setAttribute("location",location);

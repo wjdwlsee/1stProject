@@ -23,17 +23,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
-
 <script>
-	/*$(document).ready(function(){
-		$('tr').click(function(){
-			var aid = Number($(this).children().eq(0).text()); // 0번째 td안의 있는 text;
-			//alert(aid);
-			if(!isNaN(aid)){
-				location.href = '${conPath}/infoContent.do?aid='+aid+'&pageNum=${pageNum}';
-			}
-		});
-	});*/
 	function tdClicked(iid){
 		if(!isNaN(iid)){
 			location.href = '${conPath}/infoContent.do?iid='+iid+'&pageNum=${pageNum}';
@@ -42,11 +32,22 @@
 </script>
 </head>
 <body>
+<c:if test="${not empty param.next && empty loginErrorMsg}">
+	<script>
+		location.href = '${conPath}/${param.next}';
+	</script>
+</c:if>
+<c:if test="${empty member }">
+	<script>
+		location.href = '${conPath}/loginView.do?next=lnfoList.do';
+	</script>
+</c:if>
 <header> 
+	
 		<div class="gnb">
-				<ul>
-					<li><a href="${conPath }/member/login.jsp">로그인</a></li>
-					<li><a href="${conPath }/member/join.jsp">회원가입</a></li>
+				☰<ul>
+					<li><a href="${conPath }/main/main.jsp">홈</a></li>
+					<li><a href="${conPath }/member/logout.do">로그아웃</a></li>	
 					
 				</ul>
 	
@@ -61,6 +62,11 @@
 					hitory.back();
 			</script>
 		</c:if>
+		<%-- <c:if test="${empty member}">
+			<script>alert('로그인 후 사용할수 있습니다');
+				location.href = '${conPath}/member/loginView.do?next=infoList.do';
+			</script>
+		</c:if> --%>
 		<div id="content_form">
 		<br>
 		<div id="content">
@@ -69,7 +75,7 @@
 		 		 	<ul>
 					<li>자유게시판 가기<ol class="subMenu">
 								<li><a href="${conPath }/boardList.do">자유게시판 글</a></li>
-								<li><a href="${conPath }/infoList.do">정보게시판</a></li>
+								<li><a href="${conPath }/infoView.do">여행 정보 추천받기</a></li>
 								<li><a href="#">메뉴1-3</a></li>
 								</ol>
 					</li>

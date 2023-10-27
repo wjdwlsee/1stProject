@@ -41,20 +41,7 @@
 	<c:if test="${not empty boardResult }">
 		<script>alert('${boardResult}');</script>
 	</c:if>
-	<header> 
-		<div class="gnb">
-				<ul>
-					<li><a href="${conPath }/member/login.jsp">로그인</a></li>
-					<li><a href="${conPath }/member/join.jsp">회원가입</a></li>
-					
-				</ul>
-	
-		</div>
-		<div class="logo" onclick="location.href='${conPath }/main/main.jsp'">
-			<p>여행은 개인의 취향이다 </p>
-
-		</div> 
-	</header>
+	<jsp:include page="../main/header.jsp"/>
 	<div id="content_form">
 		<br>
 		<div id="content">
@@ -99,6 +86,9 @@
 					<tr><td colspan="6">등록된 글이 없습니다</td></tr>
 				</c:if>
 		      </table>
+	 </div> <!-- .hit_product -->
+    </div><!-- .section2 -->
+  </div><!-- #content -->
 		<p class="paging">
 			<a href="${conPath }/boardList.do?pageNum=1">&lt;&lt;</a>
 			&nbsp; &nbsp; &nbsp;
@@ -127,9 +117,6 @@
 			&nbsp; &nbsp; &nbsp;
 			<a href="${conPath }/boardList.do?pageNum=${pageCnt }">&gt;&gt;</a>
 		</p>
-	 </div> <!-- .hit_product -->
-    </div><!-- .section2 -->
-  </div><!-- #content -->
   </div>
 </body>
 </html>
