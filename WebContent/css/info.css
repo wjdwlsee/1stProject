@@ -8,11 +8,9 @@ font-family: 'Hi Melody', sans-serif;
 
 h1{text-align: center; padding-top: 50px;}
 .select_area {
-    width: 1000px;
+     width: 700px;
     margin: 0 auto;
     padding: 0 0 10px;
-    font-weight:bold; 
-    position: absolute;
 }
 
 
@@ -43,7 +41,8 @@ h1{text-align: center; padding-top: 50px;}
     padding: 0 0 10px 10px;
 }
 .select_area input[type="submit"] {
-margin-left: 500px;
+ width : 100px;
+ margin-left:300px;
 
 }
 .select_area input[type="radio"] {

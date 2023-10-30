@@ -16,8 +16,6 @@
 </head>
 <body>
 		<form action="${conPath }/info.do" method="get">
-			<%-- <input type="text" name="lname" value="${param.lno }"> --%>
-				
 			<h1>어디로 여행갈래 ?</h1>
 		<div class="select_area">
 			<ul id="areaul">

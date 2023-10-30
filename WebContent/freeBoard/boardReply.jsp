@@ -8,12 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="${conPath}/css/style.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script>
-	$(document).ready(function(){
-		
-	});
-</script>
 </head>
 <body>
 <c:if test="${empty member }"> <!-- 로그인 후에만 해당 답글을 달 수 있음 -->
@@ -40,7 +36,7 @@
 								value="[답]${originBoard.ftitle }">
 					</td>
 				</tr>
-				<tr><td>본문</td><td><textarea name="fContent" rows="3" cols="3"></textarea></td></tr>
+				<tr><td>본문</td><td><textarea name="fcontent" rows="3" cols="3"></textarea></td></tr>
 				<tr><td>첨부파일</td><td><input type="file" name="ffilName"></td></tr>
 				<tr><td colspan="2">
 							<input type="submit" value="답변쓰기" class="btn">

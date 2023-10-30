@@ -14,6 +14,13 @@
 		height:400px;
 		margin: 100px auto 0px;
 	}
+	#content_form td input[type="submit"],#content_form td input[type="button"],#content_form td input[type="reset"]{
+	width: 10%;
+	height: 50px;
+	background: #ivory;
+	border: white;
+	border-radius: 100%;
+}
 </style>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script>
@@ -26,7 +33,6 @@
 <div id="content_form">
 	<form action="${conPath }/boradModify.do" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="pageNum" value="${param.pageNum }">
-		<input type="hidden" name="fid" value="${board.fid }">
 		<input type="hidden" name="ftitle" value="${board.ftitle }">
 		<input type="hidden" name="fcontent" value="${board.fcontent }">
 		<input type="hidden" name="dbFileName" value="${board.ffileName }">

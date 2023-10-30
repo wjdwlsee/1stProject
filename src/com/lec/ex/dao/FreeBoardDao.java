@@ -306,7 +306,7 @@ public class FreeBoardDao {
 		private void preReplyBoardStep(int bgroup, int bstep) {
 			Connection        conn  = null;
 			PreparedStatement pstmt = null;
-			String sql = "UPDATE FREEBOARD SET FSTEP = FSTEP + 1 WHERE FGROUP=? AND FSTEP>?";
+			String sql = "UPDATE FREEBOARD SET FSTEP = FSTEP + 1 WHERE FGROUP=? AND FSTEP>= ?";
 			try {
 				conn = ds.getConnection();
 				pstmt = conn.prepareStatement(sql);
@@ -334,7 +334,7 @@ public class FreeBoardDao {
 			Connection        conn  = null;
 			PreparedStatement pstmt = null;
 			String sql = "INSERT INTO FREEBOARD (FID, MID, FTITLE, FCONTENT, "
-					+ 					"FREEBOARD, FGROUP, FSTEP, FINDENT, FIP)" + 
+					+ 					"FFILENAME, FGROUP, FSTEP, FINDENT, FIP)" + 
 					"  VALUES (FREEBOARD_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?)";
 			try {
 				conn = ds.getConnection();

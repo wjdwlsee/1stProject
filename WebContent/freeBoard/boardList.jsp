@@ -11,13 +11,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
-<link href="${conPath}/css/board.css" rel="stylesheet">
+<link href="${conPath}/css/board2.css" rel="stylesheet">
 <style>
-	#content_form {
-		height:470px;
-		margin: 30px auto 0px;
-	}
-	#content_form table tr { height: 10px;}
 </style>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script>
@@ -44,36 +39,31 @@
 	<jsp:include page="../main/header.jsp"/>
 	<div id="content_form">
 		<br>
-		<div id="content">
-		 	<div class = "board">
-		 		<div class="lnb"> 
-		 		 	<ul>
-					<li>자유게시판 가기<ol class="subMenu">
-								<li><a href="${conPath }/boardList.do">자유게시판 글</a></li>
-								<li><a href="${conPath }/infoList.do">정보게시판</a></li>
-								<li><a href="#">메뉴1-3</a></li>
-								</ol>
-					</li>
-				</ul>
-		 		</div>
-			 </div>
-		   <div class="section1">
-		     <div class="slide_banner">slide banner</div>
-		   </div> <!-- .section1 -->
 		   <div class="section2">
-		     <div class="hit_product">
-		      
-		       <table >
-					<tr>
+		     <div class="hit_product">      
+		       <table>
 		     		<c:forEach items="${boardList }" var="board">
-							<td onclick="tdClicked('${board.fid }')">
+					<tr onclick="tdClicked('${board.fid }')">
+								<td>
 								<img src="${conPath }/freeBoardup/${board.ffileName}"
-										alt="${board.mid }사진" width="251" height="180">						
-								<h1> ${board.ftitle } </h1>
-								<h3>${board.fcontent }</h3>
-							</td>
-					</c:forEach>
+										alt="${board.mid }사진" width="300">
+								</td>	
+								<td class="left">
+								<c:forEach var="i" begin="1" end="${board.findent }">
+									<c:if test="${i==board.findent }">└─</c:if>
+									<c:if test="${i!=board.findent }"> &nbsp; &nbsp; </c:if>
+								</c:forEach>
+								</td>
+								<td>													
+								<h1>${board.ftitle } </h1>
+								<h2>${board.fcontent }</h2>
+								</td>
+								<td>${board.mname }</td>
+								<td>${board.fhit }</td>
+							<td><fmt:formatDate value="${board.frdate }" type="date" dateStyle="short"/></td>
+							<td>${board.fip }</td>
 					</tr>
+					</c:forEach>
 		     	</table>
 		     	<table >
 		      		<tr>
@@ -86,7 +76,7 @@
 					<tr><td colspan="6">등록된 글이 없습니다</td></tr>
 				</c:if>
 		      </table>
-	 </div> <!-- .hit_product -->
+	 </div> #F9F3ED<!-- .hit_product -->
     </div><!-- .section2 -->
   </div><!-- #content -->
 		<p class="paging">
@@ -117,6 +107,5 @@
 			&nbsp; &nbsp; &nbsp;
 			<a href="${conPath }/boardList.do?pageNum=${pageCnt }">&gt;&gt;</a>
 		</p>
-  </div>
 </body>
 </html>

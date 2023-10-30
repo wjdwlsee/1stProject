@@ -13,13 +13,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
 <style>
-	#content_form {
-		height:470px;
-		margin: 30px auto 0px;
+	img{
+		width: 400px; height: 300px;
 	}
 	#content_form table tr { height: 10px;}
+	#content_form table {width: 1000px;}
 </style>
-
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
@@ -37,15 +36,16 @@
 		location.href = '${conPath}/${param.next}';
 	</script>
 </c:if>
-<c:if test="${empty member }">
+<%-- <c:if test="${empty member && empty admin}">
 	<script>
+		alert("로그인 후 사용하실수 있습니다");
 		location.href = '${conPath}/loginView.do?next=lnfoList.do';
 	</script>
-</c:if>
+</c:if> --%>
 <header> 
-	
+
 		<div class="gnb">
-				☰<ul>
+				☰ <ul>
 					<li><a href="${conPath }/main/main.jsp">홈</a></li>
 					<li><a href="${conPath }/member/logout.do">로그아웃</a></li>	
 					
@@ -53,7 +53,7 @@
 	
 		</div>
 		<div class="logo" onclick="location.href='${conPath }/main/main.jsp'">
-			<p>여행은 개인의 취향이다 </p>
+			<h3>여행은 개인의 취향이다 </h3>
 
 		</div> 
 </header>
@@ -69,22 +69,6 @@
 		</c:if> --%>
 		<div id="content_form">
 		<br>
-		<div id="content">
-		 	<div class = "board">
-		 		<div class="lnb"> 
-		 		 	<ul>
-					<li>자유게시판 가기<ol class="subMenu">
-								<li><a href="${conPath }/boardList.do">자유게시판 글</a></li>
-								<li><a href="${conPath }/infoView.do">여행 정보 추천받기</a></li>
-								<li><a href="#">메뉴1-3</a></li>
-								</ol>
-					</li>
-				</ul>
-		 		</div>
-			 </div>
-		   <div class="section1">
-		     <div class="slide_banner">slide banner</div>
-		   </div> <!-- .section1 -->
 		   <div class="section2">
 		     <div class="hit_product">
 		      
@@ -94,17 +78,19 @@
 				<tr><td colspan="6">등록된 글이 없습니다</td></tr>
 			</c:if>
 			<c:if test="${totCnt!=0 }">
+			<tr>
 				<c:forEach items="${infoList }" var="info">
-					<tr>
 						<td onclick="tdClicked('${info.iid }')">
-							<h1>${info.ititle }</h1>
+							<h2>${info.ititle }</h2>
 							<h3>${info.icontent }</h3>
 							<p>${info.ihit }</p>
 							<img src="${conPath }/infoFileUp/${info.ifilename}"
-									alt="${info.iid }사진" width="200">
+									alt="${info.iid }사진" width="300" >
 						</td>
-					</tr>
+						
+						
 				</c:forEach>
+			</tr>
 				</c:if>
 		</table>
 		 <table >

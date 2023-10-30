@@ -135,7 +135,7 @@ margin-left: 500px;
 </head>
 <body>
 	<form action="${conPath}/infoBest.do " method="get">
-			<input type="text" name="lno" value="${param.lno }">
+			<input type="hidden" name="lno" value="${param.lno }">
 			<%-- <input type="text" name="tno" value="${param.tno }"> --%>
 			<h1>무슨 테마가 좋아 ?</h1>
 		<div class="select_area">

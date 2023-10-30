@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <link href="${conPath }/css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -25,19 +25,10 @@
 			history.back();
 		</script>
 	</c:if>
-	<header> 
-		<div class="gnb">
-				<ul>
-					<li><a href="${conPath }/member/join.jsp">회원가입</a></li>
-					<li><a href="${conPath }/main/main.jsp">홈</a></li>
-					
-				</ul>
-	
-		</div>
-		<div class="logo" onclick="location.href='${conPath }/main/main.jsp'">
-			<p>여행은 개인의 취향이다 </p>
-
-		</div> 
+<header> 
+	<div class="logo" onclick="location.href='${conPath }/main/main.jsp'">
+		<h3>여행은 개인의 취향이다</h3>
+	</div>
 </header>
 	<div id="content_form">
 		<form action="${conPath }/login.do" method="post">
@@ -53,14 +44,36 @@
 				<tr>
 					<td colspan="2">
 						<p>
-							<input type="submit" value="로그인" class="btn">
+							<input type="submit" value="로그인" class="btn"><br>
+							<a href="${conPath }/member/join.jsp">아직 회원이 아니세요?</a> 
 							<input type="button" value="회원가입" class="btn"
-									onclick="history.back()">
+									onclick="location='${conPath }/member/join.jsp'">
 						</p>
 					</td>
 				</tr>
+				<tr>
+					<td colspan="2">
+				<p>sns 간편 로그인 </p>
+				<hr>
+						<p>
+						<a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.com%2F%3Fptid%3D19027681%26ptt%3D8%26fpts%3D0&ec=futura_hpp_co_si_001_p&ifkv=AVQVeyxPl01zxTaJs8xDA-JafJTtmTjZTv3n-fwzIk6AbUR8zx7MPs5uIvM1znIAX7nIvshRWW-4uw&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S721810539%3A1698574574658001&theme=glif" >
+							<img src ="${conPath }/img/281764.png" width="50">
+						</a>
+						<a href="https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/" >
+							<img src ="${conPath }/img/naver_btn.f60c41fb.png" width="50">
+							
+						</a>
+						<a href="https://www.instagram.com/accounts/login/?source=auth_switcher" >
+							<img src ="${conPath }/img/2111463.png" width="50">
+						</a>
+						</p>
+					</td>
+				</tr>
+				
 			</table>
+			
 		</form>
 	</div>
+	<jsp:include page="../main/footer.jsp"/>
 </body>
 </html>

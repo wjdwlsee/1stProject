@@ -1,15 +1,14 @@
 @charset "UTF-8";
-*{padding:0; margin: 0;}
-body { 
-	
-}
+*{padding:0 auto; margin: 0 auto;}
 header{
-	background-image:url('../img/snow-4801976_1280.jpg') ;
+	background-image:url('../img/jeju-2748095_1280.jpg') ;
 	background-repeat : no-repeat;
 	background-size : cover;
-	height: 700px;
+	height: 400px;
+	color: #ffffff
 }
-p{font-size: 20px; color: #808080;}
+p{font-size: 20px; color: #808080; }
+.paging{text-align: center; margin: 10px; color: black}
 header a {text-decoration: none; font-weight: bold;}
 header li { list-style: none;}
 header .gnb ul {
@@ -28,6 +27,7 @@ header .gnb a {
 	padding-left:15px;
 	padding-right:15px;
 }
+
 header .logo{
 		
 	height:400px;
@@ -62,11 +62,12 @@ header .lnb a {
 #content_form {
  	font-size: 9pt;
 	font-family: 'Hi Melody', sans-serif;
-	width: 800px; height:600px; 
+	width: 800px; /*height:600px; */
 	margin: 20px auto 0px;
 }
 #content_form {
 	bolder:1px solid #99ccff;
+	overflow: hidden;
 }
 
 #content_form table {
@@ -94,75 +95,11 @@ header .lnb a {
 #content_form td input:not(.btn), #content_form td textarea{
 	width: 90%;
 }
-#content_form td div{
-	width: 90%; margin: 0 auto;
-}
-#content{
-    width:1000px; margin:0 auto;
-}
-#content .lnb {
-  margin :20px auto;
-  border-top: 1px dashed #887718;
-  border-bottom: 1px dashed #887718;
-}
-#content .lnb ul{
-	overflow: hidden;
-	width:250px;
-	margin: 0 auto;
-}
-#content .lnb ul li {
-	margin: 3px;
-	float:right;
-	padding:3px 30px;
-	line-height: 15px;
-}
-/* * * * * #content .section1 * * * * */
-#content .section1 {
-    width:100%;
-    overflow: hidden;
-}
-
-#content .section1 > div {
-    border: 1px solid gray;
-    box-sizing: border-box;
-    float: left;
-    height: 400px;
-    line-height: 400px;
-    text-align: center;
-}
-
-#content .section1 .slide_banner {
-    width: 100%;
-}
-
 
 /* * * * * #content .section2 * * * * */
-#content .section2 .hit_product {
+.section2 .hit_product {
     text-align: center;
-    margin: 28px ;
-}
-
-#content .section2 .hit_product {
-   
-}
-
- #content .section2 .hit_product ul,
- #content .section2 .md_product ul {
-     overflow: hidden;
-     /*width:998px <= 마진5개 포함*/
- }
-
-#content .section2 ul > li{
+    margin: 10px ;
+    width: 100%;
     float: left;
-    height: 500px;
-    line-height: 400px;
-    text-align: center;
-    border: 1px solid gray;
-    box-sizing: border-box;
-    width: 24%;
-    margin-right: 0.8%;
 }
-
- #content .section2 ul > li:first-child {
-        margin : 10%;
-   }

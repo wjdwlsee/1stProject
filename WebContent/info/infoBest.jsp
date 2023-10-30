@@ -42,26 +42,10 @@ function tdClicked(fid){
 		</c:if>
 		<div id="content_form">
 		<form action="${conPath }/listInsert.do">
-		<br>
-		<div id="content">
-		 	<div class = "board">
-		 		<div class="lnb"> 
-		 		 	<ul>
-					<li>자유게시판 가기<ol class="subMenu">
-								<li><a href="${conPath }/boardList.do">자유게시판 글</a></li>
-								<li><a href="${conPath }/infoList.do">정보게시판</a></li>
-								<li><a href="#">메뉴1-3</a></li>
-								</ol>
-					</li>
-				</ul>
-		 		</div>
-			 </div>
-		   <div class="section1">
-		     <div class="slide_banner">slide banner</div>
-		   </div> <!-- .section1 -->
 		   <div class="section2">
 		     <div class="hit_product">  
 		<table>
+			<caption>여행 추천 글</caption>
 			<tr>
 			<c:if test="${totCnt==0 }">
 				<tr><td colspan="6">등록된 글이 없습니다</td></tr>
@@ -83,10 +67,9 @@ function tdClicked(fid){
 				</c:forEach>
 				</c:if>
 		</table>
-		<input type="submit" value="다음"  class="btn btn-outline-secondary">
+		<input type="submit" value="저장"  class="btn btn-outline-secondary">
 	 </div> <!-- .hit_product -->
     </div><!-- .section2 -->
-  </div><!-- #content -->
   </form>
   </div>
 </body>

@@ -8,12 +8,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="${conPath }/css/style.css" rel="stylesheet">
-<link rel="stylesheet" href ="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" >	
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link href="${conPath }/css/style.css" rel="stylesheet">	
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
@@ -72,7 +71,7 @@
 		
 		$('form').submit(function(){
 		// "사용 가능한 ID입니다"(#idConfirmResult), "비밀번호 일치(#pwChkResult)"가 출력되었을 경우만 submit 가능
-		var midConfirmResult = $('#midConfirmResult').text().trim();
+			var midConfirmResult = $('#midConfirmResult').text().trim();
 			var mpwChkResult = $('#mpwChkResult').text().trim();
 			var memailConfirmResult = $('#memailConfirmResult').text().trim();
 			if(midConfirmResult != '사용 가능한 ID'){
@@ -110,21 +109,13 @@
   });
  </script>
  <header> 
-		<div class="gnb">
-				<ul>
-					<li><a href="${conPath }/member/login.jsp">로그인</a></li>
-					<li><a href="${conPath }/main/main.jsp">홈</a></li>
-					
-				</ul>
-	
-		</div>
 		<div class="logo" onclick="location.href='${conPath }/main/main.jsp'">
-			<p>여행은 개인의 취향이다 </p>
+			<h3>여행은 개인의 취향이다 </h3>
 
 		</div> 
 </header>
- <div id="content_form">
-		<form action="${conPath }/join.do" method="post" enctype="multipart/form-data">
+ <div id="content_form2">
+		<form action="${conPath }/join.do" method="post">
 			<table>
 				<caption>회원가입</caption>
 				<tr>
@@ -165,7 +156,7 @@
 				<tr>
 					<td colspan="2">
 						<p>
-							<input type="submit" value="회원가입" class="btn btn-outline-secondary" onclick="location='${conPath}/loginView.do'">
+							<input type="submit" value="회원가입" class="btn btn-outline-secondary">
 						</p>
 					</td>
 				</tr>

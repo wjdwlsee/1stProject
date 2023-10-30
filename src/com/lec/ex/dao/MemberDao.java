@@ -105,7 +105,7 @@ public class MemberDao {
 			Connection        conn  = null;
 			PreparedStatement pstmt = null;
 			String sql = "INSERT INTO MEMBER "
-					+ "		(mID, mPw, mName, mEmail,  mBirth, mAddress) "
+					+ "		(mID, mPw, mName, mEmail, mBirth, mAddress) "
 					+ " VALUES (?, ?, ?, ?, ?,  ?)";
 			try {
 				conn = ds.getConnection();
