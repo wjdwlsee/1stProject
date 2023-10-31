@@ -36,12 +36,12 @@
 		location.href = '${conPath}/${param.next}';
 	</script>
 </c:if>
-<%-- <c:if test="${empty member && empty admin}">
+<c:if test="${empty member && empty admin}">
 	<script>
 		alert("로그인 후 사용하실수 있습니다");
 		location.href = '${conPath}/loginView.do?next=lnfoList.do';
 	</script>
-</c:if> --%>
+</c:if> 
 <header> 
 
 		<div class="gnb">
@@ -82,8 +82,7 @@
 				<c:forEach items="${infoList }" var="info">
 						<td onclick="tdClicked('${info.iid }')">
 							<h2>${info.ititle }</h2>
-							<h3>${info.icontent }</h3>
-							<p>${info.ihit }</p>
+							<p>조회수 : ${info.ihit }</p>
 							<img src="${conPath }/infoFileUp/${info.ifilename}"
 									alt="${info.iid }사진" width="300" >
 						</td>

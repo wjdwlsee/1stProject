@@ -6,9 +6,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href ="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" >
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="${conPath }/css/style.css" rel="stylesheet">
+	<style>
+		#content_form {
+				height:400px; 
+				margin: 20px auto 80px;
+		}
+	</style>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script>
@@ -74,10 +81,8 @@
 	<c:if test="${empty member }">
 		<script>location.href='${conPath}/loginView.do?next=modifyView.do';</script>
 	</c:if>
-	<jsp:include page="../main/header.jsp"/>
 	<div id="content_form">
 		<form action="${conPath }/modify.do" method="post" enctype="multipart/form-data">
-			<input type="hidden" name="dbMphoto" value="${member.mphoto }">
 			<table>
 				<caption>정보수정</caption>
 				<tr>
@@ -85,20 +90,16 @@
 					<td>
 						<input type="text" name="mid" value="${member.mid }" readonly="readonly" size="3">
 					</td>
-					<td rowspan="4">
-						<img src="${conPath }/memberPhotoUp/${member.mphoto}"
-								 alt="${member.mname }사진">
-					</td>
 				</tr>
 				<tr>
 					<th>현비밀번호</th>
 					<td>
-						<input type="password" name="oldMpw" placeholder="Password">
+						<input type="password" name="oldMpw">
 					 </td>
 				</tr>
 				<tr>
 					<th>새비밀번호</th>
-					<td><input type="password" name="mpw" size="3" placeholder="Password"></td>
+					<td><input type="password" name="mpw" size="3"></td>
 				</tr>
 				<tr>
 					<th>이름</th>
@@ -109,7 +110,7 @@
 				<tr>
 					<th>메일</th>
 					<td colspan="2">
-						<input type="email" name="memail" value="${member.memail }" placeholder="email@example.com">
+						<input type="email" name="memail" value="${member.memail }">
 						<div id="memailConfirmResult" class="left"> &nbsp; </div>
 					</td>
 				</tr>
@@ -128,10 +129,10 @@
 				</tr>
 				<tr>
 					<td colspan="3">
-						<input type="submit" value="정보수정" class="btn btn-outline-secondary">
-						<input type="reset" value="초기화" class="btn btn-outline-secondary">
-						<input type="reset" value="이전" onclick="history.back()" class="btn btn-outline-secondary">
-						<input type="button" value="회원탈퇴" class="btn btn-outline-secondary"
+						<input type="submit" value="정보수정" class="btn">
+						<input type="reset" value="초기화" class="btn">
+						<input type="reset" value="이전" onclick="history.back()" class="btn">
+						<input type="button" value="회원탈퇴" class="btn"
 							onclick="location.href='${conPath}/withdrawal.do'">
 					</td>
 				</tr>

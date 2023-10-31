@@ -53,34 +53,7 @@
 		 <table >
       		
       </table>
-		<p class="paging">
-			<a href="${conPath }/infoList.do?pageNum=1">&lt;&lt;</a>
-			&nbsp; &nbsp; &nbsp;
-			<c:if test="${BLOCKSIZE < startPage}">
-				<a href="${conPath }/infoList.do?pageNum=${startPage-1}">&lt;</a>
-			</c:if>
-			<c:if test="${BLOCKSIZE >= startPage }">
-				&lt;
-			</c:if>
-			&nbsp; &nbsp; &nbsp;
-			<c:forEach var="i" begin="${startPage }" end="${endPage }">
-				<c:if test="${i eq pageNum }">
-					[ <b> ${i } </b> ]
-				</c:if>
-				<c:if test="${i != pageNum }">
-					[ <a href="${conPath }/infoList.do?pageNum=${i }"> ${i } </a> ]
-				</c:if>
-			</c:forEach>
-			&nbsp; &nbsp; &nbsp;
-			<c:if test="${endPage < pageCnt }">
-				<a href="${conPath }/infoList.do?pageNum=${endPage+1 }">&gt;</a>
-			</c:if>
-			<c:if test="${endPage == pageCnt }">
-				&gt;
-			</c:if>
-			&nbsp; &nbsp; &nbsp;
-			<a href="${conPath }/infoList.do?pageNum=${pageCnt }">&gt;&gt;</a>
-		</p>
+		
 	 </div> <!-- .hit_product -->
     </div><!-- .section2 -->
   </div><!-- #content -->

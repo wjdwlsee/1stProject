@@ -8,6 +8,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+	#content_form {
+		height:400px;
+		margin: 100px auto 0px;
+	}
+	#content_form td input[type="submit"],#content_form td input[type="button"],#content_form td input[type="reset"]{
+	width: 10%;
+	height: 50px;
+	background: #ivory;
+	border: white;
+	border-radius: 100%;
+}
+</style>
 <link href="${conPath}/css/style.css" rel="stylesheet">
 </head>
 <body>

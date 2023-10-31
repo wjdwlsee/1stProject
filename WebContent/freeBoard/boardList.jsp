@@ -11,6 +11,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300&display=swap" rel="stylesheet">
 <link href="${conPath}/css/board2.css" rel="stylesheet">
 <style>
 </style>
@@ -56,7 +59,7 @@
 								</td>
 								<td>													
 								<h1>${board.ftitle } </h1>
-								<h2>${board.fcontent }</h2>
+								<pre>${board.fcontent }</pre>
 								</td>
 								<td>${board.mname }</td>
 								<td>${board.fhit }</td>

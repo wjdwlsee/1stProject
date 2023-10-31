@@ -38,6 +38,7 @@
 		<input type="hidden" name="dbFileName" value="${board.ffileName }">
 		<input type="hidden" name="mname" value="${board.mname }">
 		<input type="hidden" name="mid" value="${board.mid }">
+		<input type="hidden" name="fid" value="${board.fid }">
 		<table>
 			<caption>${board.fid }번 글 수정</caption>
 			<tr><th>작성자</th>

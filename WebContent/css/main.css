@@ -19,7 +19,6 @@ li{list-style:none;}
   margin :10px;
   padding:10px 0 10px 0; 
 }
-#content .lnb
 #content .lnb ul{
 	overflow: hidden;
 	width:300px;
@@ -31,9 +30,6 @@ li{list-style:none;}
 	padding:5px 40px;
 	line-height: 15px;
 }
-/* * * * * #content .section1 * * * * */
-.search{height: 100px; margin: 10px;}
-
 
 #content .section1 > div {
     border: 1px solid gray;
@@ -45,7 +41,7 @@ li{list-style:none;}
 }
 
 #content .section1 .slide_banner {
-    width: 700px;
+    width: 1000px;
 }
 
 #content .section1 .side_banner {
@@ -91,6 +87,7 @@ input {
   padding-left: 10px;
   color :black;
   background-color: #94CEF2;
+ 
 }
 input::placeholder {
   color: white;

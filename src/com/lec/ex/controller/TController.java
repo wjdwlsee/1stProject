@@ -147,19 +147,19 @@ public class TController extends HttpServlet {
 		}else if(command.equals("/infoView.do")) {
 			viewPage = "info/info.jsp";
 		}else if(command.equals("/info.do")) {
-			service = new infoSelect();
+			service = new infoSelectService();
 			service.execute(request, response);
 			viewPage = "info/info2.jsp";
 		}else if(command.equals("/info2.do")) {
-			service = new infoSelect2();
+			service = new infoSelect2Service();
 			service.execute(request, response);
 			viewPage = "infoBest.do";
 		}else if(command.equals("/infoBest.do")) {
-			service = new infoBest();
+			service = new infoBestService();
 			service.execute(request, response);
 			viewPage = "info/infoBest.jsp";
 		}else if(command.equals("/location.do")) {
-			service = new infoSelect();
+			service = new infoSelectService();
 			service.execute(request, response);
 			viewPage = "location/location.jsp";
 		//************************************

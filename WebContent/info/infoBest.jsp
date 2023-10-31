@@ -42,6 +42,8 @@ function tdClicked(fid){
 		</c:if>
 		<div id="content_form">
 		<form action="${conPath }/listInsert.do">
+		<input type="hidden" name="lno" value="${param.lno }">
+		 <input type="text" name="tno" value="${param.tno }"> 
 		   <div class="section2">
 		     <div class="hit_product">  
 		<table>

@@ -12,23 +12,23 @@
 	body { margin: o auto; }
 	footer {
 	margin-top :10px;
-	height:120px; background-color:#d0d2d2;}
+	padding-top:10px;
+	height:100px; background-color:#062925; }
 	footer #footer_conts p, footer #footer_conts a {
 		font-weight: blod;
 		font-size:0.9em;
 		text-align: center;
 	}
-	footer #footer_conts p:first-child {
-		font-weight: bold; 
-	}
+	
 </style>
 </head>
 <body>
 	<footer>
 		<div id="footer_conts">
-			<p>(주)좋은시스템 202</p> 
-			<p>서울특별시 어떤구 어떤로 9 좋은빌딩 1-4F | <b><a href="${conPath }/adminLoginView.do">관리자 모드</a></b></p>
-			<p>Copyright© 2022 tj . All rights reserved.</p>
+			
+			<a href="https://github.com/wjdwlsee/1stProject.git"><img src="${conPath }/img/git.png" width="25"></a>
+			<p>1stProject | <b><a href="${conPath }/adminLoginView.do">관리자 모드</a></b></p>
+			<p>Copyright© 2023 tj . All rights reserved.</p>
 		</div>
 	</footer>
 </body>

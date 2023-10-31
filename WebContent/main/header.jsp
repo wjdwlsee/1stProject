@@ -38,8 +38,11 @@
 		<div class="gnb">
 				<ul>
 					<li><a href="${conPath }/logout.do">로그아웃</a></li>
+					<li><a href="${conPath }/modifyView.do">정보수정</a></li>
+					<li><a href="${conPath }/likeList.do">저장한 글</a></li>
 				</ul>
-	
+				
+			
 		</div>
 		<div class="logo" onclick="location.href='${conPath }/main/main.jsp'">
 			<p>여행은 개인의 취향이다</p>
