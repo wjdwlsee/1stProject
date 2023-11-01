@@ -74,6 +74,32 @@
  	 		</a>
  	 	</form>
  	 </div>
+ 	 <div class="hit_product">      
+		       <table>
+		     		<c:forEach items="${boardList }" var="board">
+					<tr onclick="tdClicked('${board.fid }')">
+								<td>
+								<img src="${conPath }/freeBoardup/${board.ffileName}"
+										alt="${board.mid }사진" width="300">
+								</td>	
+								<td class="left">
+								<c:forEach var="i" begin="1" end="${board.findent }">
+									<c:if test="${i==board.findent }">└─</c:if>
+									<c:if test="${i!=board.findent }"> &nbsp; &nbsp; </c:if>
+								</c:forEach>
+								</td>
+								<td>													
+								<h1>${board.ftitle } </h1>
+								<pre>${board.fcontent }</pre>
+								</td>
+								<td>${board.mname }</td>
+								<td>${board.fhit }</td>
+							<td><fmt:formatDate value="${board.frdate }" type="date" dateStyle="short"/></td>
+							<td>${board.fip }</td>
+					</tr>
+					</c:forEach>
+		     	</table>
+		     </div>
  	
     <jsp:include page="../main/scroll.jsp"/>
 

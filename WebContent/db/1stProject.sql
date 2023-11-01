@@ -211,6 +211,8 @@ INSERT INTO INFO (IID, AID, ITITLE, ICONTENT, LNO,TNO, IFILENAME,IFILENAME2 ,IHI
     VALUES (INFO_SEQ.NEXTVAL, 'GAN','강원도 영월','스키타러 영월가기 ',4,1,'Yeongwol.jpg',null,0,0,'192.1.1.3');
 INSERT INTO INFO (IID, AID, ITITLE, ICONTENT, LNO,TNO, IFILENAME,IFILENAME2 ,IHIT,IINDENT,IIP)
     VALUES (INFO_SEQ.NEXTVAL, 'GAN','경기도 가평','숲속에서 캠핑하기 ',2,8,'Gapyeong.jpg',null,0,0,'192.1.1.3');
+INSERT INTO INFO (IID, AID, ITITLE, ICONTENT, LNO,TNO, IFILENAME,IFILENAME2 ,IHIT,IINDENT,IIP)
+    VALUES (INFO_SEQ.NEXTVAL, 'GAN','<공지사항>산불조심','경기도 가평캠핑장에서 산불',2,8,'94052_76754_431.jpg',null,0,0,'192.1.1.3');
 
 delete from info where iid = 3;
 delete from freeboard where mid = 'son';

@@ -29,13 +29,14 @@ public class TController extends HttpServlet {
 		String viewPage = null;
 		Service service = null;
 		if(command.equals("/main.do")) {
-			viewPage = "main/main.jsp";
+			service = new BoardListService();
+			viewPage = "boardList2.do";
 		}else if(command.equals("/loginView.do")) { // 로그인 화면
 			viewPage = "member/login.jsp";
 		}else if(command.equals("/login.do")) { // DB를 통해 로그인 확인 및 세션 처리
 			service = new MLoginService();
 			service.execute(request, response);
-			viewPage = "main/main.jsp";
+			viewPage = "freeBoard/boardList2.jsp";
 		}else if(command.equals("/joinView.do")) { // 화면가입 화면
 			viewPage = "member/join.jsp";
 		}else if(command.equals("/midConfirm.do")) {
@@ -53,13 +54,13 @@ public class TController extends HttpServlet {
 		}else if(command.equals("/logout.do")) { // 로그아웃 - 세션날리기
 			service = new MLogoutService();
 			service.execute(request, response);
-			viewPage = "main/main.jsp";
+			viewPage = "freeBoard/boardList2.jsp";
 		}else if(command.equals("/modifyView.do")) { // 정보 수정 화면
 			viewPage = "member/modify.jsp";
 		}else if(command.equals("/modify.do")) {// 정보수정 DB처리후 세션도 수정
 			service = new MModifyService();
 			service.execute(request, response);
-			viewPage = "main/main.jsp";
+			viewPage = "freeBoard/boardList2.jsp";
 		}else if(command.equals("/allView.do")) { // 전체 회원리스트
 			service = new MAllViewService();
 			service.execute(request, response);
@@ -67,7 +68,7 @@ public class TController extends HttpServlet {
 		}else if(command.equals("/withdrawal.do")) { // 회원탈퇴
 			service = new MWithdrawalService();
 			service.execute(request, response);
-			viewPage = "main/main.jsp";
+			viewPage = "freeBoard/boardList2.jsp";
 		}
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * 
 		 * * * * * * * * * * admin 관련 요청  * * * * * * * * * *
@@ -77,7 +78,7 @@ public class TController extends HttpServlet {
 		}else if(command.equals("/adminLogin.do")) {
 			service = new ALoginService();
 			service.execute(request, response);
-			viewPage = "main/main.jsp";
+			viewPage = "freeBoard/boardList2.jsp";
 		
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * 
 		 * * * * * * * * 파일첨부 게시판 관련 요청  * * * * * * * * * *
@@ -86,6 +87,10 @@ public class TController extends HttpServlet {
 			service = new BoardListService();
 			service.execute(request, response);
 			viewPage = "freeBoard/boardList.jsp";
+		}else if(command.equals("/boardList2.do")) {
+			service = new BoardList2Service();
+			service.execute(request, response);
+			viewPage = "freeBoard/boardList2.jsp";
 		}else if(command.equals("/boardWriteView.do")) {
 			viewPage = "freeBoard/boardWrite.jsp";
 		}else if(command.equals("/boardWrite.do")) {

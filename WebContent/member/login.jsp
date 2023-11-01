@@ -26,7 +26,7 @@
 		</script>
 	</c:if>
 <header> 
-	<div class="logo" onclick="location.href='${conPath }/main/main.jsp'">
+	<div class="logo" onclick="location.href='${conPath }/freeBoard/boardList2.jsp'">
 		<h3>여행은 개인의 취향이다</h3>
 	</div>
 </header>

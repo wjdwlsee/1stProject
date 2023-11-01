@@ -10,10 +10,10 @@
 <title>Insert title here</title>
  <style media="screen">
    .wrap{
-   margin-top:50px;
-   	margin-bottom:100px;
-     width: 1000px;
-     height: 350px;
+   margin-top:30px;
+    margin-bottom:30px;
+     width: 1200px;
+     height: 300px;
      overflow-x: scroll;
      overflow-y: hidden;
      white-space:nowrap

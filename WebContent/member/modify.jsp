@@ -14,6 +14,13 @@
 				height:400px; 
 				margin: 20px auto 80px;
 		}
+			#content_form td input[type="submit"],#content_form td input[type="button"],#content_form td input[type="reset"]{
+	width: 10%;
+	height: 50px;
+	background: #ivory;
+	border: white;
+	border-radius: 100%;
+}
 	</style>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>

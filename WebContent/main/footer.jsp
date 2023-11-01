@@ -19,16 +19,17 @@
 		font-size:0.9em;
 		text-align: center;
 	}
-	
+	a{
+	text-align: center;
+	}
 </style>
 </head>
 <body>
 	<footer>
 		<div id="footer_conts">
 			
-			<a href="https://github.com/wjdwlsee/1stProject.git"><img src="${conPath }/img/git.png" width="25"></a>
 			<p>1stProject | <b><a href="${conPath }/adminLoginView.do">관리자 모드</a></b></p>
-			<p>Copyright© 2023 tj . All rights reserved.</p>
+			<p>Copyright© 2023 tj . All rights reserved.<a href="https://github.com/wjdwlsee/1stProject.git"><img src="${conPath }/img/git.png" width="25"></a></p>
 		</div>
 	</footer>
 </body>

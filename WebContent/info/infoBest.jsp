@@ -56,11 +56,14 @@ function tdClicked(fid){
 				<c:forEach items="${infoBestList }" var="info">
 					<tr>
 						<td onclick="tdClicked('${info.iid }')">
-							<h1>${info.ititle }</h1>
-							<h3>${info.icontent }</h3>
-							<p>${info.ihit }</p>
+							
 							<img src="${conPath }/infoFileUp/${info.ifilename}"
 									alt="${info.iid }사진" width="200">
+						</td>
+						<td>
+							<h1>${info.ititle }</h1>
+							<h3>${info.icontent }</h3>					
+							<p>${info.ihit }</p>
 						</td>
 						<td>
 							<input type="checkbox" name ="iid" value="${info.iid}">  					

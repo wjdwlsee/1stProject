@@ -14,10 +14,13 @@ li{list-style:none;}
     width:1000px; margin:0 auto;
 }
 #content .lnb {
-  height : 100px;
+  height : 30px;
   text-align :center;
   margin :10px;
   padding:10px 0 10px 0; 
+  border-radius: 50%; 
+  background-color: white;
+  color: black;
 }
 #content .lnb ul{
 	overflow: hidden;

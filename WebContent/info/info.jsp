@@ -16,7 +16,7 @@
 </head>
 <body>
 		<form action="${conPath }/info.do" method="get">
-			<h1>어디로 여행갈래 ?</h1>
+			<h1><p>정보 검색 </p>어디로 여행갈래 ?</h1>
 		<div class="select_area">
 			<ul id="areaul">
 				<li>
